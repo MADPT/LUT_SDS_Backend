@@ -1,7 +1,7 @@
 {
-	"name": "coursework",
+	"name": "NodeJS Crash Course",
 	"version": "1.0.0",
-	"description": "Course tutorials code",
+	"description": "NodeJS Crash Course tutorial code",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index",
