@@ -2,18 +2,16 @@
 	<main class="relative overflow-hidden bg-gray-100 h-screen p-4">
 		<div class="flex flex-col shadow-lg bg-white my-auto">
 			<Header v-bind:todos="todos" />
-			<h1 v-if="loading">Loading...</h1>
+			<h1 v-if="loading" class="p-4 text-xl font-extrabold text-black">Loading...</h1>
 			<div v-if="!loading && !error">
 				<AddTodo @add-todo="addTodo" />
 				<Todos v-bind:todos="todos" @update-todo="updateTodo" @del-todo="deleteTodo" />
 			</div>
 
 			<div v-if="error" class="bg-red-600">
-				<div class="p-4">
-					<p class="font-medium text-white truncate">
-						{{ error }}
-					</p>
-				</div>
+				<p class="p-4 font-medium text-white truncate">
+					{{ error }}
+				</p>
 			</div>
 		</div>
 	</main>
