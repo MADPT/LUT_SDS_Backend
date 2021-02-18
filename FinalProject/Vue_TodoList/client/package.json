@@ -1,5 +1,6 @@
 {
-	"name": "vue_todolist",
+	"name": "TodoList_MEVN",
+	"description": "Todo List (MEVN + TailwindCSS)",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
