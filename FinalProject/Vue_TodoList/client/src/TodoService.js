@@ -11,14 +11,18 @@ class TodoService {
 	}
 
 	// Read
-	static async getTodos() {
-		try {
-			const { data } = await axios.get(url);
-
-			return data;
-		} catch (err) {
-			return err;
-		}
+	static getTodos() {
+		return new Promise((resolve, reject) => {
+			axios
+				.get(url)
+				.then((res) => {
+					const { data } = res;
+					resolve(data);
+				})
+				.catch((err) => {
+					reject(err);
+				});
+		});
 	}
 
 	// Update
