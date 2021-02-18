@@ -54,6 +54,18 @@ router.post('/', loadTodosCollection, async (req, res) => {
 	}
 });
 
+router.patch('/:id', loadTodosCollection, async (req, res) => {
+	try {
+		if (req.body.completed !== null) {
+			req.body = { ...req.body, completedAt: req.body.completed ? new Date() : null };
+		}
+
+		// await res.todos.updateOne({ _id: new ObjectID(req.params.id) }, { $set: req.body });
+		const { value } = await res.todos.findOneAndUpdate(
+			{ _id: new ObjectID(req.params.id) },
+			{ $set: req.body },
+			{ returnOriginal: false }
+		);
 
 		res.status(200).send(value);
 	} catch (err) {
