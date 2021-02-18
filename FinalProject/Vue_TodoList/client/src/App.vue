@@ -17,18 +17,6 @@
 			</div>
 		</div>
 	</main>
-
-	<!-- 
-        <div class="app-container bg-gray-100">
-		<Header v-bind:todos="todos" />
-		<h1 v-if="loading">Loading...</h1>
-		<div v-if="!loading">
-			<AddTodo @add-todo="addTodo" />
-			<Todos v-bind:todos="todos" @update-todo="updateTodo" @del-todo="deleteTodo" />
-		</div>
-		<p class="error" v-if="error">{{ error }}</p>
-	</div>
-     -->
 </template>
 
 <script>
