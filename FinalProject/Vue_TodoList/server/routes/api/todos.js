@@ -40,13 +40,22 @@ router.get('/:id', loadTodosCollection, async (req, res) => {
 
 router.post('/', loadTodosCollection, async (req, res) => {
 	try {
-		await res.todos.insertOne({
-			title: req.body.title,
-			completed: false,
-			createdAt: new Date(),
-		});
+		const newTodo = await res.todos
+			.insertOne({
+				title: req.body.title,
+				completed: false,
+				createdAt: new Date(),
+			})
+			.then(({ ops }) => ops[0]);
 
-		res.status(201).send({ message: 'Todo added' });
+		res.status(201).send(newTodo);
+	} catch (err) {
+		res.status(500).send({ message: err.message });
+	}
+});
+
+
+		res.status(200).send(value);
 	} catch (err) {
 		res.status(500).send({ message: err.message });
 	}
@@ -54,9 +63,10 @@ router.post('/', loadTodosCollection, async (req, res) => {
 
 router.delete('/:id', loadTodosCollection, async (req, res) => {
 	try {
-		await res.todos.deleteOne({ _id: new ObjectID(req.params.id) });
+		// await res.todos.deleteOne({ _id: new ObjectID(req.params.id) });
+		const { value } = await res.todos.findOneAndDelete({ _id: new ObjectID(req.params.id) });
 
-		res.status(200).send('Todo deleted');
+		res.status(200).send(value);
 	} catch (err) {
 		res.status(500).send({ message: err.message });
 	}
