@@ -10,7 +10,7 @@ app.use(cors());
 app.use('/api/todos', todosRouter);
 
 // Handle production
-if (process.env.NODE_ENV === 'production ') {
+if (process.env.NODE_ENV === 'production') {
 	// Static folder
 	app.use(express.static(__dirname + '/public'));
 
