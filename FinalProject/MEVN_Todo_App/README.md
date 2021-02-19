@@ -2,6 +2,8 @@
 
 Todo app using MEVN stack (MongoDB, Express, VueJS and NodeJS).
 
+[Demo online](https://mevn-todo-app.herokuapp.com/)
+
 ## Getting Started
 
 ```bash
@@ -16,8 +18,8 @@ cd client
 npm run serve
 
 # MongoDB connection
-# Create MongoDB Atlas account and update `user`, `password`, `cluster` and `database`
-echo "DB_URL=mongodb+srv://<USER>:<PASSWORD>@<CLUSTER>.blfv9.mongodb.net/<DATABASE>?retryWrites=true&w=majority" > .env
+# Create MongoDB Atlas account and add the connection string
+echo "DB_URL=<CONNECTION_STRING>" > .env
 
 # Build for production (will build into server/public, ready for deployment)
 cd client
