@@ -25,6 +25,5 @@ npm run build
 
 # Deploy to Heroku
 heroku git:remote -a <APP_NAME>
-
 git subtree push --prefix FinalProject/MEVN_Todo_App heroku master
 ```
