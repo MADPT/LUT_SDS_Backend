@@ -1,7 +1,7 @@
 {
-	"name": "vue_todolist",
+	"name": "mevn_todo_app",
 	"version": "1.0.0",
-	"description": "Full stack MEVN (MongoDB Express Vue NodeJS) Todo List app",
+	"description": "MEVN (MongoDB Express Vue NodeJS) Todo App",
 	"main": "index.js",
 	"scripts": {
 		"start": "node server/index.js",
